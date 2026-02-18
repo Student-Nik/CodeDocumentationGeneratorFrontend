@@ -9,6 +9,7 @@ import {
   Shield,
   Zap,
   FileText,
+  ArrowDown,
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -64,13 +65,20 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          onClick={handleRedirect}
           className="mt-10 inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl shadow-indigo-500/30 transition-all duration-300"
         >
-          Try Now
-          <ArrowRight size={20} />
+          <Sparkles size={22} />AI DocGen
         </motion.button>
       </section>
+
+      <div className="flex items-center justify-center">
+  <ArrowDown 
+    size={50} // bigger size
+    className="text-blue-500 animate-bounce" 
+  />
+</div>
+
+
 
       {/* Stats Section */}
       <section className="px-6 py-20 max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
@@ -164,12 +172,19 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-10 border-t border-slate-800 text-slate-500">
-        <div className="flex justify-center gap-6 mb-4">
-          <Github className="hover:text-white hover:scale-125 transition-all duration-300 cursor-pointer" />
-        </div>
-        © {new Date().getFullYear()} AI Code Documentation Generator. All rights reserved.
-      </footer>
+<footer className="text-center py-10 border-t border-slate-800 text-slate-500">
+  <div className="flex justify-center gap-6 mb-4">
+    <a 
+      href="https://github.com/Student-Nik/CodeDocumentationGenerator.git" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      <Github className="hover:text-white hover:scale-125 transition-all duration-300 cursor-pointer" />
+    </a>
+  </div>
+  © {new Date().getFullYear()} AI Code Documentation Generator. All rights reserved.
+</footer>
+
     </div>
   );
 }
